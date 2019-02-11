@@ -1,0 +1,48 @@
+.profile_left h2{
+	color:#000;
+	font-size:1.5em;
+	margin-bottom:1em;
+	font-family: 'Oswald', sans-serif;
+}
+table.table_working_hours {
+    width: 100%;
+}
+.table_working_hours tr {
+    border: 0;
+}
+td.day_label {
+    color: #777;
+    padding:5px 0;
+}
+.table_working_hours1 tr.opened_1 td {
+    padding: 0 0 2px;
+}
+.table_working_hours tr.opened_1 td {
+    padding: 0 0 5px;
+}
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+.flex-container a:hover,
+.flex-slider a:hover,
+.flex-container a:focus,
+.flex-slider a:focus {
+  outline: none;
+}
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+td.day_label1{
+    color: #777;
+    padding:2px 0;
+}
+td.day_label {
+    color: #777;
+    padding:5px 0;
+}

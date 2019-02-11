@@ -1,0 +1,387 @@
+{% extends "layout.html" %}
+{% block content %}
+<br/><br>
+	<div class="grid_3">
+  <div class="container">
+      
+
+<div class="profile">
+   	 <div class="col-md-12 profile_left">
+
+   	 	<div class="col_3">
+   	        <div class="col-sm-4 row_2">
+				<div class="flexslider">
+					<br/>
+					 <img class="rounded-circle account-img" src="{{url_for('static', filename='pictures/'+current_user.profile.image_file)}}">
+				</div>
+			</div>
+			<!--728x90-->
+			<div class="col-sm-8 row_1">
+				<table class="table_working_hours">
+		        	<tbody>
+                        <tr class="opened">
+							<td class="day_label"><h4> Name :</h4></td>
+							<td class="day_value"><h4>{{ current_user.name }}</h4></td>
+						</tr>
+		        		<tr class="opened">
+							<td class="day_label"><h4>Date of Birth : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4> </td>
+							<td class="day_value"><h4>{{current_user.profile.date_of_birth.strftime('%d-%m-%Y') }}</h4></td>
+						</tr>
+					    <tr class="opened">
+							<td class="day_label"><h4>Last Login :</h4></td>
+							<td class="day_value"><h4>#### ago</h4></td>
+						</tr>
+					    <tr class="opened">
+							<td class="day_label"><h4>Religion :</h4></td>
+							<td class="day_value"><h4>{{current_user.profile.religion }}</h4></td>
+						</tr>
+					    <tr class="opened">
+							<td class="day_label"><h4>Marital Status :</h4></td>
+							<td class="day_value"><h4>{{current_user.profile.maritial_status }}</h4></td>
+						</tr>
+					    <tr class="opened">
+							<td class="day_label"><h4>State :</h4></td>
+							<td class="day_value"><h4>###</h4></td>
+						</tr>
+					    <tr class="closed">
+							<td class="day_label"><h4>Profile Created by :</h4></td>
+							<td class="day_value closed"><span><h4>Personal</h4></span></td>
+						</tr>
+					    <tr class="closed">
+							<td class="day_label"><h4> Education :</h4></td>
+							<td class="day_value closed"><h4><span>####</span></h4></td>
+						</tr>
+				    </tbody>
+				</table>
+				<br>
+				<br>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+</div></div>
+
+<form>
+	<h1>about</h1>
+	<div class="form-group">
+		{{ form.maritial_status.label(class="form-control-label") }}
+		{% if form.maritial_status.errors %}
+			{{ form.maritial_status(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.maritial_status.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.maritial_status(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.mother_tongue.label(class="form-control-label") }}
+		{% if form.mother_tongue.errors %}
+			{{ form.mother_tongue(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.mother_tongue.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.mother_tongue(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.weight.label(class="form-control-label") }}
+		{% if form.weight.errors %}
+			{{ form.weight(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.weight.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.weight(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.height.label(class="form-control-label") }}
+		{% if form.height.errors %}
+			{{ form.height(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.height.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.height(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.state.label(class="form-control-label") }}
+		{% if form.state.errors %}
+			{{ form.state(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.state.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.state(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.drink.label(class="form-control-label") }}
+		{% if form.drink.errors %}
+			{{ form.drink(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.drink.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.drink(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.religion.label(class="form-control-label") }}
+		{% if form.religion.errors %}
+			{{ form.religion(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.religion.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.religion(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.place_of_birth.label(class="form-control-label") }}
+		{% if form.place_of_birth.errors %}
+			{{ form.place_of_birth(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.place_of_birth.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.place_of_birth(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.education.label(class="form-control-label") }}
+		{% if form.education.errors %}
+			{{ form.education(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.education.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.education(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.occupation.label(class="form-control-label") }}
+		{% if form.occupation.errors %}
+			{{ form.occupation(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.occupation.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.occupation(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.income.label(class="form-control-label") }}
+		{% if form.income.errors %}
+			{{ form.income(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.income.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.income(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<h1>family</h1>
+	<div class="form-group">
+		{{ form.mother_name.label(class="form-control-label") }}
+		{% if form.mother_name.errors %}
+			{{ form.mother_name(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.mother_name.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.mother_name(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.father_name.label(class="form-control-label") }}
+		{% if form.father_name.errors %}
+			{{ form.father_name(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.father_name.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.father_name(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.sister.label(class="form-control-label") }}
+		{% if form.sister.errors %}
+			{{ form.sister(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.sister.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.sister(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.brother.label(class="form-control-label") }}
+		{% if form.brother.errors %}
+			{{ form.brother(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.brother.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.brother(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.family_joint.label(class="form-control-label") }}
+		{% if form.family_joint.errors %}
+			{{ form.family_joint(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.family_joint.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.family_joint(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<h1>partner</h1>
+	<div class="form-group">
+		{{ form.min_age.label(class="form-control-label") }}
+		{% if form.min_age.errors %}
+			{{ form.min_age(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.min_age.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.min_age(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.max_age.label(class="form-control-label") }}
+		{% if form.max_age.errors %}
+			{{ form.max_age(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.max_age.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.max_age(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.status.label(class="form-control-label") }}
+		{% if form.status.errors %}
+			{{ form.status(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.status.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.status(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.complexion.label(class="form-control-label") }}
+		{% if form.complexion.errors %}
+			{{ form.complexion(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.complexion.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.complexion(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.p_religion.label(class="form-control-label") }}
+		{% if form.p_religion.errors %}
+			{{ form.p_religion(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.p_religion.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.p_religion(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.language.label(class="form-control-label") }}
+		{% if form.language.errors %}
+			{{ form.language(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.language.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.language(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.p_education.label(class="form-control-label") }}
+		{% if form.p_education.errors %}
+			{{ form.p_education(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.p_education.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.p_education(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="form-group">
+		{{ form.p_state.label(class="form-control-label") }}
+		{% if form.p_state.errors %}
+			{{ form.p_state(class="form-control form-control-label-lg is-invalid")}}
+			<div class="invalid-feedback">
+				{% for error in form.p_state.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+		{% else %}
+			{{ form.p_state(class="form-control form-control-label-lg")}}
+		{% endif %}
+	</div>
+	<div class="clearfix" align="centre"> </div>
+    
+    {{form.submit(class="btn-lg btn-success")}}
+    
+    </div>
+</form>
+{% endblock %}

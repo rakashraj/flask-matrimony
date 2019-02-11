@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+<div class="grid_3">
+<div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index-2.html"></a>
+        <span class="divider"></span>
+        
+     </ul>
+   </div>
+
+   <div class="services">
+   	  <div class="col-sm-6 login_left">
+
+
+           <form method="POST" action="" enctype="multipart/form-data">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="form-group">Login</legend>
+				<div class="form-group">
+					{{ form.gender.label(class="form-control-label") }}
+					{% if form.gender.errors %}
+						{{ form.gender(class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.gender.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.gender(class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.religion.label(class="form-control-label") }}
+					{% if form.religion.errors %}
+						{{ form.religion(class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.religion.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.religion(class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.maritial_status.label(class="form-control-label") }}
+					{% if form.maritial_status.errors %}
+						{{ form.maritial_status(class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.maritial_status.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.maritial_status(class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.date_of_birth.label(class="form-control-label") }}
+					{% if form.date_of_birth.errors %}
+						{{ form.date_of_birth(class="form-control form-control-label-lg is-invalid",placeholder="test")}}
+						<div class="invalid-feedback">
+							{% for error in form.date_of_birth.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.date_of_birth(class="form-control form-control-label-lg")}}
+					{% endif %} 
+				</div>
+				<div class="form-group">
+                    {{ form.picture.label() }}
+                    {{ form.picture(class="form-control-file") }}
+                    {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+				</fieldset>
+			<div class="form-group">
+				{{form.submit(class="btn btn-outline-info")}}
+				
+			</div>
+			<small>
+				<a href="#"> Forget Password?</a>
+			</small>
+	
+		</form>
+        </div>
+	  </div>
+	  <br>
+	  <br>
+	  <br>
+	  <div class="col-sm-6">
+	  	<div class="border-top pt-3">
+		<h2 class="text-muted">
+			Need an Account? <a class="ml-2" href="{{ url_for('users.register') }}"><br/>Sign Up</a>
+		</h2>
+	  </div>
+	  <div class="clearfix"> </div>
+   </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

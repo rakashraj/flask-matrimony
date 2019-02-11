@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>{{current_user.name}}</h1>
+
+
+<div class="grid_3">
+<div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index-2.html"></a>
+        <span class="divider"></span>
+        
+     </ul>
+   </div>
+
+   <div class="services">
+   	  <div class="col-sm-6 login_left">
+
+
+           <form method="POST" action="" enctype="multipart/form-data">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="form-group">Login</legend>
+				<div class="form-group">
+					{{ form.mother_name.label(class="form-control-label") }}
+					{% if form.mother_name.errors %}
+						{{ form.mother_name(class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.mother_name.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.mother_name(class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.father_name.label(class="form-control-label") }}
+					{% if form.father_name.errors %}
+						{{ form.father_name(class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.father_name.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.father_name(class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.sister.label(class="form-control-label") }}
+					{% if form.sister.errors %}
+						{{ form.sister(class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.sister.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.sister(class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.brother.label(class="form-control-label") }}
+					{% if form.brother.errors %}
+						{{ form.brother(class="form-control form-control-label-lg is-invalid",placeholder="test")}}
+						<div class="invalid-feedback">
+							{% for error in form.brother.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.brother(class="form-control form-control-label-lg")}}
+					{% endif %} 
+				</div>
+				<div class="form-group">
+					{{ form.family_joint.label(class="form-control-label") }}
+					{% if form.family_joint.errors %}
+						{{ form.family_joint(class="form-control form-control-label-lg is-invalid",placeholder="test")}}
+						<div class="invalid-feedback">
+							{% for error in form.family_joint.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.family_joint(class="form-control form-control-label-lg")}}
+					{% endif %} 
+				</div>
+		
+				</fieldset>
+			<div class="form-group">
+				{{form.submit(class="btn btn-outline-info")}}
+				
+			</div>
+			<small>
+				<a href="#"> Forget Password?</a>
+			</small>
+	
+		</form>
+        </div>
+	  </div>
+	  <br>
+	  <br>
+	  <br>
+	  <div class="col-sm-6">
+	  	<div class="border-top pt-3">
+		<h2 class="text-muted">
+			Need an Account? <a class="ml-2" href="{{ url_for('users.register') }}"><br/>Sign Up</a>
+		</h2>
+	  </div>
+	  <div class="clearfix"> </div>
+   </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

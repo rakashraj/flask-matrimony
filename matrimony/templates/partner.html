@@ -1,0 +1,59 @@
+f{% extends "layout.html" %}
+{% block content %}
+<h1>{{current_user.name}}</h1>
+
+
+<div class="grid_3">
+<div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index-2.html"></a>
+        <span class="divider"></span>
+        
+     </ul>
+   </div>
+
+   <div class="services">
+   	  <div class="col-sm-6 login_left">
+
+
+           <form method="POST" action="" enctype="multipart/form-data">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="form-group">Login</legend>
+	
+		
+				</fieldset>
+			<div class="form-group">
+				{{form.submit(class="btn btn-outline-info")}}
+				
+			</div>
+			<small>
+				<a href="#"> Forget Password?</a>
+			</small>
+	
+		</form>
+        </div>
+	  </div>
+	  <br>
+	  <br>
+	  <br>
+	  <div class="col-sm-6">
+	  	<div class="border-top pt-3">
+		<h2 class="text-muted">
+			Need an Account? <a class="ml-2" href="{{ url_for('users.register') }}"><br/>Sign Up</a>
+		</h2>
+	  </div>
+	  <div class="clearfix"> </div>
+   </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+<div class="grid_3">
+<div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index-2.html"></a>
+        <span class="divider"></span>
+        
+     </ul>
+   </div>
+
+   <div class="services">
+   	  <div class="col-sm-6 login_left">
+
+
+           <form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="form-group"><h2>Join Today</h2></legend>
+				<div class="form-group">
+					{{ form.name.label(size=20 ,class="form-control-label") }}
+					{% if form.name.errors %}
+						{{ form.name(size=2) }}
+					</div>
+						<div class="invalid-feedback">
+							{% for error in form.name.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.name(size=2 ,class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.email.label(class="form-control-label") }}
+					{% if form.email.errors %}
+						{{ form.email(size=50 ,class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.email.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.email(size=20 ,class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.password.label(class="form-control-label") }}
+					{% if form.password.errors %}
+						{{ form.password(size=20 ,class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.password.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.password(size=20 ,class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.confirm_password.label(class="form-control-label") }}
+					{% if form.confirm_password.errors %}
+						{{ form.confirm_password(size=20 ,class="form-control form-control-label-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.confirm_password.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.confirm_password(size=20 ,class="form-control form-control-label-lg")}}
+					{% endif %}
+				</div> 				
+			</fieldset>
+			<div class="form-group">
+				{{form.submit(class="btn btn-success")}}
+				
+			</div>
+	
+		</form>
+        </div>
+	  </div>
+	  <br>
+	  <br>
+	  <br>
+	  <div class="col-sm-6">
+	  	<div class="border-top pt-3">
+		<h1 class="text-muted">
+			Already Having an Account? <a class="ml-2" href="{{ url_for('users.login')}}">Login </a>
+		</h1>
+	  </div>
+	  <div class="clearfix"> </div>
+   </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

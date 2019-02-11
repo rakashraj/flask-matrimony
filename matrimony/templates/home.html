@@ -1,0 +1,66 @@
+{% extends 'layout.html'%}
+{% block content %}
+
+<section class="courses">
+    {% for user in users.items %}
+      {% if user.profile %}
+         <article>
+           <figure>
+             <img src="{{ url_for('static', filename='pictures/'+user.profile.image_file) }}" alt="Teriyaki sauce" width="280px" height="208px">
+
+           </figure>
+           <hgroup>
+             <h2>{{user.name}}</h2>
+             <h3>Last login : {{ user.last_login.strftime('%b ,%d %Y %I:%M %p') }}</h3>
+           </hgroup>
+           <table class="table_working_hours">
+                  <tbody>
+                  <tr class="opened">
+                  <td class="day_label">Age   :</td>
+                  <td class="day_value">{{user.profile.age}} yrs</td>
+                  </tr>
+                  <tr class="opened">
+                  <td class="day_label">Date of Birth :</td>
+                  <td class="day_value">{{user.profile.date_of_birth.strftime('%b, %d %Y')}}</td>
+                  </tr>
+                  <tr class="opened">
+                  <td class="day_label">Religion   :</td>
+                  <td class="day_value">{{user.profile.religion}}</td>
+                  </tr>
+                  <tr class="opened">
+                  <td class="day_label">Maritial Status   :</td>
+                  <td class="day_value">{{user.profile.maritial_status}}</td>
+                  </tr>
+                  {%if user.about %}
+                  <tr class="opened">
+                  <td class="day_label">State   :</td>
+                  <td class="day_value">{{user.about.state}}, India</td>
+                  </tr>
+                  {% endif %}
+                </tbody>
+
+            </table>
+            <a href="{{url_for('profiles.profile', id=user.id)}}" class="btn btn-success btn-sm" role="button">View Profile</a>
+
+
+         </article>
+       </section>
+      {% endif %}
+    {% endfor %}
+
+{% endblock %}
+{% block ring %}
+<div class="container">
+  {% for page_num in users.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+    {% if page_num %}
+      {% if users.page== page_num %}
+        <a class="btn btn-info mb-4" href="{{ url_for('main.home', page=page_num)}}">{{page_num}}</a>
+      {% else %}
+        <a class="btn btn-outline-info mb-4" href="{{ url_for('main.home', page=page_num)}}">{{page_num}}</a>
+      {% endif %}
+    {% else %}
+    ...
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+</div>

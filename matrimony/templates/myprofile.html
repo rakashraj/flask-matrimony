@@ -1,0 +1,288 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<br/><br>
+
+	<div class="grid_3">
+  <div class="container">
+
+
+<div class="profile">
+   	 <div class="col-md-12 profile_left">
+
+   	 	<div class="col_3">
+   	        <div class="col-sm-4 row_2">
+				<div class="flexslider">
+					<br/>
+					 <img class="rounded-circle account-img" src="{{url_for('static', filename='pictures/'+current_user.profile.image_file) }}"
+					  width="280px" height="208px">
+				  </div>
+			</div>
+			<!--728x90-->
+			<div class="col-sm-8 row_1">
+				<table class="table_working_hours">
+		        	<tbody>
+                        <tr class="opened">
+							<td class="day_label"><h4> Name :</h4></td>
+							<td class="day_value"><h4>{{ current_user.name }}</h4></td>
+						</tr>
+		        		<tr class="opened">
+							<td class="day_label"><h4>Date of Birth : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4> </td>
+							<td class="day_value"><h4>{{current_user.profile.date_of_birth.strftime('%d-%m-%Y') }}</h4></td>
+						</tr>
+					    <tr class="opened">
+							<td class="day_label"><h4>Last Login :</h4></td>
+							<td class="day_value"><h4>{{current_user.last_login.strftime('%b,%d %Y %I:%M %p')}}</h4></td>
+						</tr>
+					    <tr class="opened">
+							<td class="day_label"><h4>Religion :</h4></td>
+							<td class="day_value"><h4>{{current_user.profile.religion }}</h4></td>
+						</tr>
+					    <tr class="opened">
+							<td class="day_label"><h4>Marital Status :</h4></td>
+							<td class="day_value"><h4>{{current_user.profile.maritial_status }}</h4></td>
+						</tr>
+					    <tr class="opened">
+							<td class="day_label"><h4>State :</h4></td>
+							<td class="day_value"><h4>{{current_user.about.state}}</h4></td>
+						</tr>
+					    <tr class="closed">
+							<td class="day_label"><h4>Profile Created by :</h4></td>
+							<td class="day_value closed"><span><h4>Personal</h4></span></td>
+						</tr>
+					    <tr class="closed">
+							<td class="day_label"><h4> Education :</h4></td>
+							<td class="day_value closed"><h4><span>{{current_user.about.education}}</span></h4></td>
+						</tr>
+				    </tbody>
+				</table>
+				<br>
+				<br>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+{% if current_user.about %}
+<div class="col_4">
+		    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+			   <ul id="myTab" class="nav nav-tabs nav-tabs1" role="tablist">
+				  <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">About Myself</a></li>
+				  <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Family Details</a></li>
+				  <li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab" aria-controls="profile1">Partner Preference</a></li>
+			   </ul>
+			   <div id="myTa
+
+Content" class="tab-content">
+				  <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+
+				    <div class="basic_1">
+				    	<h3>Basics & Lifestyle</h3>
+				    	<div class="col-md-6 basic_1-left">
+				    	  <table class="table_working_hours">
+				        	<tbody>
+				        		<tr class="opened_1">
+									<td class="day_label">Name :</td>
+									<td class="day_value">{{ current_user.name }}</td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">Marital Status :</td>
+									<td class="day_value">{{ current_user.profile.maritial_status }}</td>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Height :</td>
+									<td class="day_value">{{current_user.about.height}}</td>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Profile Created by :</td>
+									<td class="day_value closed"><span>personal</span></td>
+								</tr>
+								<tr class="opened">
+									<td class="day_label">Drink :</td>
+									<td class="day_value closed"><span>{{current_user.about.drink}}</span></td>
+								</tr>
+						    </tbody>
+				          </table>
+				         </div>
+				         <div class="col-md-6 basic_1-left">
+				          <table class="table_working_hours">
+				        	<tbody>
+				        		<tr class="opened_1">
+									<td class="day_label">Age :</td>
+									<td class="day_value">{{current_user.profile.age}} Yrs</td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">Mother Tongue :</td>
+									<td class="day_value">{{current_user.about.mother_tongue}}</td>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Weight :</td>
+									<td class="day_value">{{current_user.about.weight}}</td>
+								</tr>
+						    </tbody>
+				        </table>
+				        </div>
+				        <div class="clearfix"> </div>
+				    </div>
+				    <div class="basic_1">
+				    	<h3>Religious / Social & Astro Background</h3>
+				    	<div class="col-md-6 basic_1-left">
+				    	  <table class="table_working_hours">
+				        	<tbody>
+				        		<tr class="opened">
+									<td class="day_label">Time of Birth :</td>
+									<td class="day_value">11:23 p.m.</td>
+								</tr>
+				        		<tr class="opened">
+									<td class="day_label">Reiligion :</td>
+									<td class="day_value">{{current_user.profile.religion}}</td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">Date of Birth :</td>
+									<td class="day_value closed"><span>{{current_user.profile.date_of_birth.strftime('%d-%b-%Y') }}</span></td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">Place of Birth :</td>
+									<td class="day_value closed">{{current_user.about.place_of_birth}}</td>
+								</tr>
+							 </tbody>
+				          </table>
+				         </div>
+				         <div class="col-md-6 basic_1-left">
+				          <table class="table_working_hours">
+				        	<tbody>
+
+							</tbody>
+				        </table>
+				        </div>
+				        <div class="clearfix"> </div>
+				    </div>
+				    <div class="basic_1 basic_2">
+				    	<h3>Education & Career</h3>
+				    	<div class="col-md-6 basic_1-left">
+				    	  <table class="table_working_hours">
+				        	<tbody>
+
+				        		<tr class="opened">
+									<td class="day_label">Education :</td>
+									<td class="day_value">{{current_user.about.education}}</td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">Occupation :</td>
+									<td class="day_value closed">{{current_user.about.occupation}}</td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">Annual Income :</td>
+									<td class="day_value closed">{{current_user.about.income}}</td>
+								</tr>
+							 </tbody>
+				          </table>
+				         </div>
+				         <div class="clearfix"> </div>
+				    </div>
+				  </div>
+				  <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+				    <div class="basic_3">
+				    	<h3>Family Details</h3>
+				    	<div class="basic_1 basic_2">
+
+				    	<div class="col-md-6 basic_1-left">
+				    	  <table class="table_working_hours">
+				        	<tbody>
+				        		<tr class="opened">
+									<td class="day_label">Father Name :</td>
+									<td class="day_value">{{current_user.family.father_name}}</td>
+								</tr>
+				        		<tr class="opened">
+									<td class="day_label">Mother Name :</td>
+									<td class="day_value">{{current_user.family.mother_name}}</td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">No. of Brothers :</td>
+									<td class="day_value closed">{{current_user.family.brother}}</td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">No. of Sisters :</td>
+									<td class="day_value closed"><span>{{current_user.family.sister}}</span></td>
+								</tr>
+
+							    <tr class="opened">
+									<td class="day_label">Joint Family :</td>
+									<td class="day_value closed"><span>{{current_user.family.family_joint}}</span></td>
+								</tr>
+							 </tbody>
+				          </table>
+				          <br>
+				         </div>
+				       </div>
+				    </div>
+				 </div>
+				 <div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
+				 	<div class="basic_3">
+				    	<h3>Partner Preferances</h3>
+
+				    <div class="basic_1 basic_2">
+				       <div class="col-md-6 basic_1-left">
+				    	  <table class="table_working_hours">
+				        	<tbody>
+				        		<tr class="opened">
+									<td class="day_label">Age   :</td>
+									<td class="day_value">{{current_user.partner.min_age}} to {{current_user.partner.max_age}} years</td>
+								</tr>
+				        		<tr class="opened">
+									<td class="day_label">Marital Status :</td>
+									<td class="day_value">{{current_user.partner.status}}</td>
+								</tr>
+							    <tr class="opened">
+									<td class="day_label">Complexion :</td>
+									<td class="day_value closed"><span>{{current_user.partner.complexion}}</span></td>
+								</tr>
+								<tr class="opened">
+									<td class="day_label">Religion :</td>
+									<td class="day_value closed"><span>{{current_user.partner.p_religion}}</span></td>
+								</tr>
+								<tr class="opened">
+									<td class="day_label">Mother Tongue :</td>
+									<td class="day_value closed"><span>{{current_user.partner.language}}</span></td>
+								</tr>
+								<tr class="opened">
+									<td class="day_label">Education :</td>
+									<td class="day_value closed"><span>{{current_user.partner.p_education}}</span></td>
+								</tr>
+
+								<tr class="opened">
+									<td class="day_label">Country of Residence :</td>
+									<td class="day_value closed"><span>India</span></td>
+								</tr>
+								<tr class="opened">
+									<td class="day_label">State :</td>
+									<td class="day_value closed"><span>{{current_user.partner.p_state}}</span></td>
+								</tr>
+
+							 </tbody>
+				          </table>
+				          <br>
+				        </div>
+				     </div>
+				 </div>
+		     </div>
+		     <br>
+
+		  </div>
+	   </div>
+   	 </div>
+       <div class="clearfix"> </div>
+    </div>
+
+  </div>
+</div>
+<div style="top: 70px; position: absolute; right: 30px; "><a  href="{{url_for('profiles.edit')}}" class="btn btn-default btn-md" role="button">Update Profile</a></div>
+{% else %}
+<h1>Create About Section !<a  href="{{url_for('profiles.edit')}}" role="button">Describe Yourself</a> </h1>
+{% endif %}
+
+
+{% endblock %}

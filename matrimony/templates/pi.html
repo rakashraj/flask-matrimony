@@ -1,0 +1,368 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form method="POST" action="" enctype="multipart/form-data">
+			{{ form.hidden_tag() }}
+				    					<table class="table_working_hours">
+								        	<tbody>
+								        		<tr class="opened_1">
+													<td class="form-control-label"><label class="form-control-label" for="maritial_status">Name :</label></td>
+													<td class="day_value">rem</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label"><label class="form-control-label" for="maritial_status">Profile Created by : &nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+													<td class="day_value closed"><span>personal</span></td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.maritial_status.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.maritial_status.errors %}
+															{{ form.maritial_status(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.maritial_status.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.maritial_status(class="form-control form-control-label-lg")}}
+														{% endif %}</td>
+												</tr>
+
+												<tr class="opened">
+													<td class="day_label">{{ form.mother_tongue.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.mother_tongue.errors %}
+															{{ form.mother_tongue(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.mother_tongue.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.mother_tongue(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.height.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.height.errors %}
+															{{ form.height(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.height.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.height(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+
+											    <tr class="opened">
+													<td class="day_label">{{ form.weight.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.weight.errors %}
+															{{ form.weight(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.weight.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.weight(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+
+												<tr class="opened">
+													<td class="day_label">{{ form.state.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.state.errors %}
+															{{ form.state(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.state.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.state(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.drink.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.drink.errors %}
+															{{ form.drink(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.drink.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.drink(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+												<tr class="opened">
+														<td class="day_label">{{ form.religion.label(class="form-control-label") }}</td>
+														<td class="day_value">
+															{% if form.religion.errors %}
+																{{ form.religion(class="form-control form-control-label-lg is-invalid")}}
+																<div class="invalid-feedback">
+																	{% for error in form.religion.errors %}
+																		<span>{{ error }}</span>
+																	{% endfor %}
+																</div>
+															{% else %}
+																{{ form.religion(class="form-control form-control-label-lg")}}
+															{% endif %}</td>
+													</tr>
+								        		
+								        		
+											    
+												    <tr class="opened">
+														<td class="day_label">{{ form.place_of_birth.label(class="form-control-label") }}</td>
+														<td class="day_value">
+															{% if form.place_of_birth.errors %}
+																{{ form.place_of_birth(class="form-control form-control-label-lg is-invalid")}}
+																<div class="invalid-feedback">
+																	{% for error in form.place_of_birth.errors %}
+																		<span>{{ error }}</span>
+																	{% endfor %}
+																</div>
+															{% else %}
+																{{ form.place_of_birth(class="form-control form-control-label-lg")}}
+															{% endif %}</td>
+													</tr>
+													<tr class="opened">
+													<td class="day_label">{{ form.income.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.income.errors %}
+															{{ form.income(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.income.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.income(class="form-control form-control-label-lg")}}
+														{% endif %}</td>
+												</tr>
+												<td class="day_label">{{ form.mother_name.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.mother_name.errors %}
+															{{ form.mother_name(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.mother_name.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.mother_name(class="form-control form-control-label-lg")}}
+														{% endif %}</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.father_name.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.father_name.errors %}
+															{{ form.father_name(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.father_name.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.father_name(class="form-control form-control-label-lg")}}
+														{% endif %}</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.brother.label(class="form-control-label") }}</td>
+													<td class="day_value closed">
+														{% if form.brother.errors %}
+															{{ form.brother(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.brother.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.brother(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.sister.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.sister.errors %}
+															{{ form.sister(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.sister.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.sister(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.family_joint.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.family_joint.errors %}
+															{{ form.family_joint(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.family_joint.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.family_joint(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+												<td class="day_label">{{ form.min_age.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.min_age.errors %}
+															{{ form.min_age(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.min_age.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.min_age(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.max_age.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.max_age.errors %}
+															{{ form.max_age(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.max_age.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.max_age(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+								
+								        		<tr class="opened">
+													<td class="day_label">{{ form.complexion.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.complexion.errors %}
+															{{ form.complexion(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.complexion.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.complexion(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+											    
+												<tr class="opened">
+													<td class="day_label">{{ form.language.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.language.errors %}
+															{{ form.language(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.language.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.language(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+											    <tr class="opened">
+													<td class="day_label">{{ form.p_education.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.p_education.errors %}
+															{{ form.p_education(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.p_education.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.p_education(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+												<tr class="opened">
+													<td class="day_label">{{ form.p_state.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.p_state.errors %}
+															{{ form.p_state(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.p_state.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.p_state(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+											    <tr class="opened">
+													<td class="day_label">{{ form.p_religion.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.p_religion.errors %}
+															{{ form.p_religion(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.p_religion.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.p_religion(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+								        		<tr class="opened">
+													<td class="day_label">{{ form.status.label(class="form-control-label") }}</td>
+													<td class="day_value">
+														{% if form.status.errors %}
+															{{ form.status(class="form-control form-control-label-lg is-invalid")}}
+															<div class="invalid-feedback">
+																{% for error in form.status.errors %}
+																	<span>{{ error }}</span>
+																{% endfor %}
+															</div>
+														{% else %}
+															{{ form.status(class="form-control form-control-label-lg")}}
+														{% endif %}
+													</td>
+												</tr>
+										    </tbody>
+				          				</table>
+				    				
+				    				
+				          				<table class="table_working_hours">
+				          					<tbody>
+				          						<tr class="opened_1">
+													<td class="day_label"><label class="form-control-label" for="maritial_status">Age :</label></td>
+													<td class="day_value">0 Yrs</td>
+												</tr>
+												
+												
+												
+				          					</tbody>
+				          				</table>
+				          			
+	<div class="clearfix" align="centre">
+    
+    		{{form.submit(class="btn-lg btn-success")}}
+    
+	</div>
+</form>
+{% endblock %}

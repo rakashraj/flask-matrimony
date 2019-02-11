@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hindustan Matrimony</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <!--dfadsfsadf-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+    <style type="text/css">
+     
+       header, section, footer, aside, article, figure, figcaption {
+         display: block;}
+       body {
+         color: #666666;
+         background-color: #f9f8f6;
+         background-image: url("images/dark-wood.jpg");
+         background-position: center;
+         font-family: Georgia, times, serif;
+         line-height: 1.4em;
+         margin: 0px;}
+       
+       
+       section.courses {
+         float: left;
+         width: 679px;
+         border-right: 1px solid #eeeeee;}
+       article {
+         clear: both;
+         overflow: auto;
+         width: 100%;}
+       hgroup {
+         margin-top:40px;}
+       figure {
+         float: left;
+         width: 290px;
+         height: 220px;
+         padding: 5px;
+         margin: 20px;
+         border: 1px solid #eeeeee;}
+       figcaption {
+         font-size: 90%;
+         text-align: left;}
+       aside {
+         width: 230px;
+         float: left;
+         padding: 0px 0px 0px 20px;}
+       aside section a {
+         display: block;
+         padding: 10px;
+         border-bottom: 1px solid #eeeeee;}
+       aside section a:hover {
+         color: #985d6a;
+         background-color: #efefef;}
+       a {
+         color: #de6581;
+         text-decoration: none;}
+       h1, h2, h3 {
+         font-weight: normal;}
+       h2 {
+        margin: 10px 0px 5px 0px;
+         padding: 0px;}
+       h3 {
+         margin: 0px 0px 10px 0px;
+         color: #de6581;}
+       aside h2 {
+         padding: 30px 0px 10px 0px;
+         color: #de6581;}
+       footer {
+         font-size: 80%;
+         padding: 7px 0px 0px 20px;}
+     </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand mr-4" href="{{url_for('main.credit')}}">SrmsMatrimony</a>
+    </div>
+    <ul class="nav navbar-nav mr-4">
+      <li class="nav-item nav-link"><a href="{{url_for('main.home')}}">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <span class="glyphicon glyphicon-user"></span>Profile<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{url_for('main.home')}}">All Profile</a></li>
+          <li><a href="{{url_for('profiles.search')}}">Search Profile</a></li>
+          
+        </ul>
+      </li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {% if current_user.is_authenticated %}
+        {% if current_user.profile %}
+        <li><a href="{{url_for('profiles.myprofile')}}"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+        {% else %}
+        <li><a href="{{url_for('profiles.create')}}"><span class="glyphicon glyphicon-user"></span>Create Profile</a></li>
+        {% endif%}
+        <li><a href="{{url_for('messages.user_message')}}"><span class="glyphicon glyphicon-log-out"></span>Inbox</a></li>
+        <li><a href="{{url_for('users.logout')}}"><span class="glyphicon glyphicon-log-out"></span>logout</a></li>
+
+      {% else %}
+      <li><a href="{{url_for('users.register')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="{{url_for('users.login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% endif %}
+      
+    </ul>
+  </div>
+</nav>
+</header>
+
+<main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages=get_flashed_messages(with_categories=true)%}
+            {% if messages %}
+              {% for category, message in messages  %}
+              <div class="alert alert-{{category}}">
+                {{message}}
+              </div>
+              {% endfor%}
+            {% endif%}
+          {% endwith%}
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+</main>
+{% block ring%}
+{% endblock %}
+<!--  
+<div class="container">
+  <h3>Right Aligned Navbar</h3>
+  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+</div> -->
+</body>
+</html>
